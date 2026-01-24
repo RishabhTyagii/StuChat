@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>StuChat Backend Test</h3>
+
+  <input id="msg" placeholder="message">
+  <button onclick="sendMsg()">Send</button>
+
+  <div id="chat"></div>
+
+  <script>
+  const ws = new WebSocket(
+    "ws://127.0.0.1:8000/chat/5/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5MjUxMzYxLCJpYXQiOjE3NjkyNDc3NjEsImp0aSI6ImQ5NzA2MzdjNDZlYTRmYWJhYzc5Nzg0YmFlZDA0OTAzIiwidXNlcl9pZCI6IjIifQ.qXNqdvgbqDE1fdUxVfz4JhzXhXJIbmcAWBygpfhKUGQ"
+  );
+
+  ws.onmessage = function (e) {
+    console.log("MSG:", e.data);
+  };
+
+  function sendMsg() {
+    ws.send(JSON.stringify({
+      message: document.getElementById("msg").value
+    }));
+  }
+</script>
+
+</body>
+</html>
