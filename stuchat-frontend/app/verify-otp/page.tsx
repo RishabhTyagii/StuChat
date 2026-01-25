@@ -15,6 +15,7 @@ export default function VerifyOTP() {
   const [attempts, setAttempts] = useState(0);
   const router = useRouter();
   const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const otpRefs = useRef<Array<HTMLInputElement | null>>(Array(6).fill(null));
 
   // Initialize OTP refs
   useEffect(() => {
@@ -238,7 +239,8 @@ export default function VerifyOTP() {
                 {otp.map((digit, index) => (
                   <input
                     key={index}
-                    ref={(el) => (otpRefs.current[index] = el)}
+                    ref={(el) => { tpRefs.current[index] = el;}}
+
                     type="text"
                     inputMode="numeric"
                     pattern="[0-9]*"
