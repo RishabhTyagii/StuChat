@@ -116,14 +116,14 @@ WSGI_APPLICATION = 'stuchat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database-1',
+        'NAME': 'yourbaazardb',  # same as schema you created
         'USER': 'admin',
-        'PASSWORD': 'Tarun123',
-        'HOST': 'your-rds-endpoint.amazonaws.com',
+        'PASSWORD': 'tarun231',
+        'HOST': 'database-1.c3skesa0esud.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
