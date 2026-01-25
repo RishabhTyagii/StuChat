@@ -3,6 +3,7 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Lock, CheckCircle, Clock, RefreshCw, Shield, Sparkles, ArrowLeft, Fingerprint, Key, AlertCircle, UserCheck } from "lucide-react";
+export const dynamic = "force-dynamic";
 
 export default function VerifyOTP() {
   const params = useSearchParams();
