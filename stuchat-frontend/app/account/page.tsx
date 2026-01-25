@@ -17,7 +17,7 @@ export default function AccountPage() {
       return;
     }
 
-    fetch("http://127.0.0.1:8000/api/profile/", {
+    fetch("https://stuchat-1.onrender.com/api/profile/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -45,7 +45,7 @@ export default function AccountPage() {
     const form = new FormData();
     form.append("profile_pic", file);
 
-    fetch("http://127.0.0.1:8000/api/profile/", {
+    fetch("https://stuchat-1.onrender.com/api/profile/", {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -105,7 +105,7 @@ export default function AccountPage() {
                       />
                     ) : profile.profile_pic ? (
                       <img
-                        src={`http://127.0.0.1:8000${profile.profile_pic}`}
+                        src={`https://stuchat-1.onrender.com${profile.profile_pic}`}
                         alt={profile.username}
                         className="w-full h-full object-cover"
                       />

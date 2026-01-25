@@ -34,17 +34,17 @@ export default function ChatPage() {
     if (!token || !otherUserId) return;
 
     /* 🔹 LOAD MY PROFILE */
-    fetch("http://127.0.0.1:8000/api/profile/", {
+    fetch("https://stuchat-1.onrender.com/api/profile/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
       .then((u) => {
         setMyUsername(u.username);
-        setMyPic(u.profile_pic ? `http://127.0.0.1:8000${u.profile_pic}` : null);
+        setMyPic(u.profile_pic ? `https://stuchat-1.onrender.com${u.profile_pic}` : null);
       });
 
     /* 🔹 LOAD CHAT HISTORY */
-    fetch(`http://127.0.0.1:8000/api/chat/history/${otherUserId}/`, {
+    fetch(`https://stuchat-1.onrender.com/api/chat/history/${otherUserId}/`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -61,19 +61,19 @@ export default function ChatPage() {
       });
 
     /* 🔹 LOAD OTHER USER PROFILE */
-    fetch(`http://127.0.0.1:8000/api/user/${otherUserId}/`, {
+    fetch(`https://stuchat-1.onrender.com/api/user/${otherUserId}/`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((r) => r.json())
       .then((u) => {
         setOtherPic(
-          u.profile_pic ? `http://127.0.0.1:8000${u.profile_pic}` : null
+          u.profile_pic ? `https://stuchat-1.onrender.com${u.profile_pic}` : null
         );
       });
 
     /* 🔹 WEBSOCKET */
     const socket = new WebSocket(
-      `ws://127.0.0.1:8000/chat/${otherUserId}/?token=${token}`
+      `ws://stuchat-1.onrender.com/chat/${otherUserId}/?token=${token}`
     );
 
     socket.onmessage = (e) => {
@@ -271,6 +271,7 @@ export default function ChatPage() {
               </svg>
             </button>
           </div>
+        <p className="text-center text-white text-sm mt-4">End-to-end encrypted chat</p>
         </div>
       </div>
     </div>

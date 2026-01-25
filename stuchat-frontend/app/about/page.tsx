@@ -1,7 +1,7 @@
 "use client";
 
 import { Github, Linkedin, Mail, Code, Cpu, Database, Cloud, Globe, Shield, Zap, Sparkles, Rocket, Star, Trophy, Award } from "lucide-react";
-
+import Navbar from "../components/Navbar";
 export default function AboutPage() {
   const techStack = [
     { name: "Next.js 14", icon: <Cpu size={20} />, color: "text-gray-100" },
@@ -12,6 +12,10 @@ export default function AboutPage() {
     { name: "PostgreSQL", icon: <Database size={20} />, color: "text-purple-400" },
     { name: "WebSocket", icon: <Globe size={20} />, color: "text-orange-400" },
     { name: "JWT Auth", icon: <Shield size={20} />, color: "text-red-400" },
+    { name: "C# .NET ASP.NET", icon: <Cpu size={20} />, color: "text-green-400" },
+        { name: "AWS", icon: <Globe size={20} />, color: "text-blue-400" },
+
+
   ];
 
   const features = [
@@ -36,22 +40,24 @@ export default function AboutPage() {
     {
       name: "Studesk",
       description: "Student productivity suite with task management",
-      tech: "Next.js + Node.js + MongoDB",
+      tech: "Next.js + PostgreSQL +Java",
       status: "Active Development",
       color: "from-blue-500 to-cyan-500"
     },
     {
       name: "StuChat",
       description: "Real-time campus communication platform",
-      tech: "Next.js + Django + WebSocket",
+      tech: "Next.js + Django + WebSocket+WebRTC",
       status: "Live",
       color: "from-green-500 to-emerald-500"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden relative" 
+    style={{paddingBottom:"30px"}} >
       {/* Animated Background */}
+      <Navbar />
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -87,7 +93,7 @@ export default function AboutPage() {
                 <div className="relative group">
                   <div className="w-48 h-48 rounded-2xl overflow-hidden border-4 border-transparent group-hover:border-blue-500/50 transition-all duration-300">
                     <img 
-                      src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop&crop=face" 
+                      src="https://yourbaazar.s3.ap-south-1.amazonaws.com/Screenshot+2026-01-25+124740.png" 
                       alt="Rishabh Tyagi"
                       className="w-full h-full object-cover"
                     />
@@ -339,7 +345,8 @@ export default function AboutPage() {
           </div>
 
           <p className="text-gray-500 text-sm">
-            Made with ❤️ by Rishabh Tyagi • Building the future, one line of code at a time
+            Made with ❤️ by Rishabh Tyagi • Building the future, End-to-End Encryption (E2EE)
+
           </p>
         </div>
       </div>
