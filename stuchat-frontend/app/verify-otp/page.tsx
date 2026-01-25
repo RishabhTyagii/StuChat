@@ -14,7 +14,7 @@ export default function VerifyOTP() {
   const [success, setSuccess] = useState("");
   const [attempts, setAttempts] = useState(0);
   const router = useRouter();
-  const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
+  // const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
   const otpRefs = useRef<Array<HTMLInputElement | null>>(Array(6).fill(null));
 
   // Initialize OTP refs
@@ -239,7 +239,7 @@ export default function VerifyOTP() {
                 {otp.map((digit, index) => (
                   <input
                     key={index}
-                    ref={(el) => { tpRefs.current[index] = el;}}
+                    ref={(el) => { otpRefs.current[index] = el;}}
 
                     type="text"
                     inputMode="numeric"
