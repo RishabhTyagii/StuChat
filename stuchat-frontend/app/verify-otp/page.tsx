@@ -3,7 +3,6 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { Mail, Lock, CheckCircle, Clock, RefreshCw, Shield, Sparkles, ArrowLeft, Fingerprint, Key, AlertCircle, UserCheck } from "lucide-react";
-export const dynamic = "force-dynamic";
 
 export default function VerifyOTP() {
   const params = useSearchParams();
@@ -15,7 +14,6 @@ export default function VerifyOTP() {
   const [success, setSuccess] = useState("");
   const [attempts, setAttempts] = useState(0);
   const router = useRouter();
-  // const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
   const otpRefs = useRef<Array<HTMLInputElement | null>>(Array(6).fill(null));
 
   // Initialize OTP refs
@@ -171,6 +169,27 @@ export default function VerifyOTP() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // If email is not provided, show error
+  if (!email) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white flex items-center justify-center">
+        <div className="bg-gray-900/40 backdrop-blur-xl border-2 border-gray-700/50 rounded-3xl p-8 text-center max-w-md">
+          <AlertCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold mb-2">Email Not Found</h2>
+          <p className="text-gray-300 mb-6">
+            Please register first with your email address.
+          </p>
+          <button
+            onClick={() => router.push("/register")}
+            className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-xl font-bold transition-all duration-300"
+          >
+            Go to Register
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white overflow-hidden relative">
       {/* Animated Background */}
@@ -241,7 +260,6 @@ export default function VerifyOTP() {
                   <input
                     key={index}
                     ref={(el) => { otpRefs.current[index] = el;}}
-
                     type="text"
                     inputMode="numeric"
                     pattern="[0-9]*"
