@@ -118,7 +118,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'stuchatdb',  # same as schema you created
         'USER': 'admin',
-        'PASSWORD': 'tarun231',
+        'PASSWORD': 'Tarun231',
         'HOST': 'database-1.c3skesa0esud.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
         'OPTIONS': {
