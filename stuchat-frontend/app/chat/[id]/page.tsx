@@ -72,9 +72,12 @@ export default function ChatPage() {
       });
 
     /* 🔹 WEBSOCKET */
+    const protocol =
+  window.location.protocol === "https:" ? "wss" : "ws";
+
     const socket = new WebSocket(
-      `ws://studeskpro.site/chat/${otherUserId}/?token=${token}`
-    );
+      `${protocol}://${window.location.host}/ws/chat/${otherUserId}/?token=${token}`
+      );
 
     socket.onmessage = (e) => {
       const data = JSON.parse(e.data);
