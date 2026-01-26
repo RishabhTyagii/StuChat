@@ -28,7 +28,7 @@ export default function PendingPage() {
     }
 
     setLoading(true);
-    fetch("https://stuchat-1.onrender.com/api/chat/pending/", {
+    fetch("https://studeskpro.site/api/chat/pending/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -190,11 +190,11 @@ export default function PendingPage() {
                         className="relative overflow-hidden rounded-full border-2 border-gray-600 group-hover:border-blue-400 transition-all duration-300 hover:scale-105 active:scale-95"
                         onClick={(e) => {
                           e.stopPropagation();
-                          openImageModal(`https://stuchat-1.onrender.com${c.profile_pic}`);
+                          openImageModal(`https://studeskpro.site${c.profile_pic}`);
                         }}
                       >
                         <img
-                          src={`https://stuchat-1.onrender.com${c.profile_pic}`}
+                          src={`https://studeskpro.site${c.profile_pic}`}
                           alt={c.username}
                           className="w-16 h-16 rounded-full object-cover group-hover:brightness-110 transition-all duration-300"
                         />

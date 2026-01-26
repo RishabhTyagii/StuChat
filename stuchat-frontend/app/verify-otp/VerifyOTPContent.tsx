@@ -97,7 +97,7 @@ export default function VerifyOTPContent() {
     setError("");
     
     try {
-      const res = await fetch("https://stuchat-1.onrender.com/api/register/resend-otp/", {
+      const res = await fetch("https://studeskpro.site/api/register/resend-otp/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -136,7 +136,7 @@ export default function VerifyOTPContent() {
     setSuccess("");
 
     try {
-      const res = await fetch("https://stuchat-1.onrender.com/api/register/verify-otp/", {
+      const res = await fetch("https://studeskpro.site/api/register/verify-otp/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp: otpToVerify }),

@@ -109,7 +109,7 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://stuchat-1.onrender.com/api/register/", {
+      const res = await fetch("https://studeskpro.site/api/register/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -44,7 +44,7 @@ export default function SearchPage() {
   }, []);
 
   async function searchUsers() {
-    console.log("Hitting URL:", `https://stuchat-1.onrender.com/api/search/?q=${q}`);
+    console.log("Hitting URL:", `https://studeskpro.site/api/search/?q=${q}`);
     console.log("Token:", localStorage.getItem("access"));
 
     if (!q.trim()) {
@@ -67,7 +67,7 @@ export default function SearchPage() {
       localStorage.setItem("searchHistory", JSON.stringify(updatedHistory));
 
       const res = await fetch(
-        `https://stuchat-1.onrender.com/api/search/?q=${q}`,
+        `https://studeskpro.site/api/search/?q=${q}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -264,7 +264,7 @@ export default function SearchPage() {
                           <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
                             {u.profile_pic ? (
                               <img
-                                src={`https://stuchat-1.onrender.com${u.profile_pic}`}
+                                src={`https://studeskpro.site${u.profile_pic}`}
                                 alt={u.username}
                                 className="w-full h-full rounded-full object-cover"
                               />

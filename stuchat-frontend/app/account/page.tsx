@@ -17,7 +17,7 @@ export default function AccountPage() {
       return;
     }
 
-    fetch("https://stuchat-1.onrender.com/api/profile/", {
+    fetch("https://studeskpro.site/api/profile/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -45,7 +45,7 @@ export default function AccountPage() {
     const form = new FormData();
     form.append("profile_pic", file);
 
-    fetch("https://stuchat-1.onrender.com/api/profile/", {
+    fetch("https://studeskpro.site/api/profile/", {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -105,7 +105,7 @@ export default function AccountPage() {
                       />
                     ) : profile.profile_pic ? (
                       <img
-                        src={`https://stuchat-1.onrender.com${profile.profile_pic}`}
+                        src={`https://studeskpro.site${profile.profile_pic}`}
                         alt={profile.username}
                         className="w-full h-full object-cover"
                       />

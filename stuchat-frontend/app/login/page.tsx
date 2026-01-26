@@ -45,7 +45,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://stuchat-1.onrender.com/api/login/", {
+      const res = await fetch("https://studeskpro.site/api/login/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
