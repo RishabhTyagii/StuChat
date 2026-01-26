@@ -182,6 +182,9 @@ DEFAULT_FROM_EMAIL='StuChat <rishabtyagi66@gmail.com>'
 EMAIL_TIMEOUT=10
 
 CORS_ALLOW_ALL_ORIGINS=True
+<<<<<<< HEAD
 CORS_ALLOWED_ORIGINS = [
     "https://studeskpro.site",
 ]
+=======
+>>>>>>> b9980092fa38962e8702066f6608c156f17aea8f
