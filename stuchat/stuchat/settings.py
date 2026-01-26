@@ -116,7 +116,7 @@ WSGI_APPLICATION = 'stuchat.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'yourbaazardb',  # same as schema you created
+        'NAME': 'stuchatdb',  # same as schema you created
         'USER': 'admin',
         'PASSWORD': 'tarun231',
         'HOST': 'database-1.c3skesa0esud.ap-south-1.rds.amazonaws.com',
