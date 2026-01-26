@@ -1,19 +1,16 @@
 import os
 from django.core.asgi import get_asgi_application
+from channels.routing import ProtocolTypeRouter, URLRouter
+import chat.routing
 
-# 🔥 VERY IMPORTANT: sabse pehle settings load
+# 🔥 settings sabse pehle
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "stuchat.settings")
 
-# 🔥 Django setup complete yahin hota hai
 django_asgi_app = get_asgi_application()
-
-from channels.routing import ProtocolTypeRouter, URLRouter
-from channels.auth import AuthMiddlewareStack
-import chat.routing
 
 application = ProtocolTypeRouter({
     "http": django_asgi_app,
-    "websocket": AuthMiddlewareStack(
-        URLRouter(chat.routing.websocket_urlpatterns)
+    "websocket": URLRouter(
+        chat.routing.websocket_urlpatterns
     ),
 })
