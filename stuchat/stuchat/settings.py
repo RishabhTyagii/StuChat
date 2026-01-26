@@ -170,16 +170,15 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.sendgrid.net'
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ALLOW_ALL_ORIGINS = True
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER='apikey'
-EMAIL_HOST_PASSWORD='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'
-
-DEFAULT_FROM_EMAIL='StuChat <rishabtyagi66@gmail.com>'
-EMAIL_TIMEOUT=10
+EMAIL_HOST_USER = "yourbaazar1@gmail.com"
+EMAIL_HOST_PASSWORD = "vzrl hfau llqk jdhd"  # gmail app password
 
 CORS_ALLOW_ALL_ORIGINS=True
 
