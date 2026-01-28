@@ -105,7 +105,7 @@ export default function AccountPage() {
                       />
                     ) : profile.profile_pic ? (
                       <img
-                        src={`https://studeskpro.site${profile.profile_pic}`}
+                       src={profile.profile_pic}
                         alt={profile.username}
                         className="w-full h-full object-cover"
                       />
