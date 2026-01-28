@@ -162,11 +162,37 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / "staticfiles" 
+# AWS Credentials
+AWS_ACCESS_KEY_ID = "AKIA5OUQZGJ76IBP32WS"
+AWS_SECRET_ACCESS_KEY = "GsnLc3HN7pKRqKCpNKwCI1A6hdXEg1U5IhEukZNA"
+AWS_STORAGE_BUCKET_NAME = "yourbaazartest"
+AWS_S3_REGION_NAME = "ap-south-1"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
 
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com"
+
+# Custom Storages
+STORAGES = {
+    "default": {
+        "BACKEND": "yourbaazar.storages_backends.MediaStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "yourbaazar.storages_backends.StaticStorage",
+    },
+}
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # agar tumhara project root me static folder hai
+]
+
+
+# URL settings
+STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+
+# Optional local fallback (sirf development ke liye)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+MEDIA_ROOT = BASE_DIR / "mediafiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
