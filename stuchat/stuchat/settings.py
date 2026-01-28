@@ -175,10 +175,10 @@ AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazo
 # Custom Storages
 STORAGES = {
     "default": {
-        "BACKEND": "yourbaazar.storages_backends.MediaStorage",
+        "BACKEND": "stuchat.storages_backends.MediaStorage",
     },
     "staticfiles": {
-        "BACKEND": "yourbaazar.storages_backends.StaticStorage",
+        "BACKEND": "stuchat.storages_backends.StaticStorage",
     },
 }
 STATICFILES_DIRS = [
