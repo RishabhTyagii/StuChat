@@ -40,7 +40,7 @@ export default function ChatPage() {
       .then((r) => r.json())
       .then((u) => {
         setMyUsername(u.username);
-        setMyPic(u.profile_pic ? `https://studeskpro.site${u.profile_pic}` : null);
+        setMyPic(u.profile_pic || null);
       });
 
     /* 🔹 LOAD CHAT HISTORY */
@@ -67,7 +67,7 @@ export default function ChatPage() {
       .then((r) => r.json())
       .then((u) => {
         setOtherPic(
-          u.profile_pic ? `https://studeskpro.site${u.profile_pic}` : null
+          u.profile_pic || null
         );
       });
 
