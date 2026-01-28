@@ -190,7 +190,9 @@ export default function PendingPage() {
                         className="relative overflow-hidden rounded-full border-2 border-gray-600 group-hover:border-blue-400 transition-all duration-300 hover:scale-105 active:scale-95"
                         onClick={(e) => {
                           e.stopPropagation();
-                          openImageModal(c.profile_pic);
+                          if (c.profile_pic) {
+                            openImageModal(c.profile_pic);
+                          }
                         }}
                       >
                         <img
