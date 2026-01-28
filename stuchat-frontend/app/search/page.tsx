@@ -264,7 +264,7 @@ export default function SearchPage() {
                           <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
                             {u.profile_pic ? (
                               <img
-                                src={`https://studeskpro.site${u.profile_pic}`}
+                                src={u.profile_pic}
                                 alt={u.username}
                                 className="w-full h-full rounded-full object-cover"
                               />
