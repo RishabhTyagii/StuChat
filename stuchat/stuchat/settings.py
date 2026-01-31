@@ -164,8 +164,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 # AWS Credentials
-AWS_ACCESS_KEY_ID = "AKIA5OUQZGJ76IBP32WS"
-AWS_SECRET_ACCESS_KEY = "GsnLc3HN7pKRqKCpNKwCI1A6hdXEg1U5IhEukZNA"
+AWS_ACCESS_KEY_ID = "#"
+AWS_SECRET_ACCESS_KEY = "#"
 AWS_STORAGE_BUCKET_NAME = "yourbaazartest"
 AWS_S3_REGION_NAME = "ap-south-1"
 AWS_S3_FILE_OVERWRITE = False
